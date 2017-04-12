@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-GB" itemscope itemtype="http://schema.org/WebPage">
 <head>
     <title></title>
     <!-- general meta data -->
@@ -103,6 +103,36 @@
 </head>
 <body>
     <!-- schema.org https://schema.org/ -->
+    
+    <!-- page owner -->	
+    <section itemprop="reviewedBy" itemscope itemtype="https://schema.org/Organization">
+	
+	<!-- Organization/Person name and logo -->	
+        <div>
+            <div itemprop="brand" itemscope itemtype="https://schema.org/Organization">
+                <p itemprop="legalName">NAME</p>
+                <figure itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                    <img itemprop="thumbnail" src="URL" width="" height="" alT="">
+                    <figcaption itemprop="caption">CAPTION</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- navigation -->
+    <section>
+         <nav itemprop="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+             <ul>
+                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" >
+                     <a href="#" itemprop="item">
+                         <span itemprop="name">ITEM</span> 
+                     </a> 
+                 </li>
+             </ul>
+         </nav>
+    </section>    
+    
+    <!-- article -->
     <article itemscope itemtype=http://schema.org/Article>
         <h1 itemprop=headline></h1>
         
@@ -116,8 +146,49 @@
        <h3 itemprop=name>
            <a href="" itemprop=url>A h3 heading</a>
        </h3>
- 
-        
+       <div itemprop="text">
+           <p>SOME TEXT</p>
+       </div>       
     </article>    
+
+    <!-- product -->
+    <section itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+        <h3 itemprop="name">PRODUCT NAME</h3>
+        <p itemprop="description">PRODUT DESCRIPTION</p>
+		<p><a href="#" itemprop="url">PRODUCT URL</a></p>
+        <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+            <img itemprop="thumbnail" src="">
+            <figcaption itemprop="caption">IMAGE DESCRIPTION</figcaption>
+        </figure>
+        <p>Price: <span itemprop="price">99.99</span><span itemprop="priceCurrency">CURRENCY</span></p>
+        <p>category: <span itemprop="category">CATEGORY</span></p>
+    </section>
+
+    <!-- comments -->
+    <section class="comments">
+
+        <div itemprop="comment" itemscope itemtype="https://schema.org/UserComments">
+            <p>comment time: <time itemprop="commentTime">TIME</time></p>
+            <p itemprop="commentText">COMMENT TEXT</p>
+            <p>Website: <a itemprop="replyToUrl"href="#">REPLY</a></p>
+            <div class="creator" itemprop="creator" itemscope itemtype="https://schema.org/Person">
+                <p>Name: <span itemprop="name">NAME</span></p>
+                <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                    <img itemprop="thumbnail" src="">
+                </figure>
+            </div>
+        </div>
+
+    </section>
+
+    
+    <!-- copyright -->
+    <div class="copyright">
+        <span itemprop="copyrightYear">YEAR</span>
+        <div itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Organization">
+            <p itemprop="legalName">COPYRIGHT HOLDER</p>
+        </div>
+   </div>    
+
 </body>    
 </html>
